@@ -5,7 +5,7 @@ File Upload Software System - FUSS
 For this project, Django is run with PostgreSQL in a Docker container. 
 <br/>_Assumes you have PostgreSQL up and running._
 
-### First Time - Docker Build to Run Django Server
+### First Time - Docker Build
 1. Clone the repo
 <br/>`git clone https://github.com/adalysg/FUSS.git`
 
@@ -19,6 +19,11 @@ For this project, Django is run with PostgreSQL in a Docker container.
 <br/>`docker compose up --build`
 
 ### Daily Workflow
-1. `git pull && docker compose up` to start container and run server
-2. `git pull && docker compuse up --build` whenever a package is added to `requirements.txt`
-3. `docker compose down` when logging off for the day
+`git pull && docker compose up` to start container and run server
+
+<br/>OR...
+<br/>`git pull && docker compuse up --build` whenever a package is added to `requirements.txt`
+
+<br/>_*make changes and push to the repo*_
+
+`docker compose down` when logging off for the day
