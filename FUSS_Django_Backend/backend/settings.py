@@ -12,9 +12,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 # For PostgreSQL Database Connection
 from dotenv import load_dotenv
-import os
-
 load_dotenv()
+import os
 
 from pathlib import Path
 
@@ -37,7 +36,7 @@ SECRET_KEY = 'django-insecure-kk_pxpy4lj-(atdbex=98l7!lq6qh6sma2*b@^73rpyu&b@)3y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost").split(",")
 
 
 # Application definition
