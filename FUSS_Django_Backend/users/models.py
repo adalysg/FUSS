@@ -9,7 +9,9 @@ from model_utils import Choices
 # where createsuperuser command can be edited
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
-        """Creates and saves a User with the given email and password."""
+        """
+        Creates and saves a User with the given email and password.
+        """
         if not email:
             raise ValueError("The Email field must be set")
         
