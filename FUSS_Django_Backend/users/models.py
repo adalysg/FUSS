@@ -50,7 +50,9 @@ class CustomUser(AbstractUser):
         return self.email
 
 class Organization(models.Model):
-    # who creates the organization profile?? aka who owns it??
+    # who creates the organization profile?? aka who owns it?? what's the signal?
+
+    
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='organization')
     name = models.CharField(max_length=255, null=False, blank=False)
     size = models.IntegerField()
@@ -67,6 +69,7 @@ class Contributor(models.Model):
 
 class Recipient(models.Model):
     STATUS = Choices('is_active', 'is_inactive')
+
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='recipient_profile')
     first_name = models.CharField(max_length=150, blank=False) # required in forms
     last_name = models.CharField(max_length=150, blank=False) # reuired in forns
