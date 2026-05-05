@@ -57,7 +57,7 @@ class Organization(models.Model):
     
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='organization')
     name = models.CharField(max_length=255, null=False, blank=False)
-    size = models.IntegerField()
+    size = models.IntegerField(default=0)
     industry = models.CharField(max_length=150)
 
 class Contributor(models.Model):
